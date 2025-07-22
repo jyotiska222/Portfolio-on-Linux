@@ -24,22 +24,14 @@ const BootScreen = ({ onBootComplete }) => {
     }, currentMessage.delay);
 
     return () => clearTimeout(timer);
-  }, [currentMessageIndex, onBootComplete]);
+  }, [currentMessageIndex, onBootComplete, setProgress]);
 
   return (
-    <div className="min-h-screen bg-black text-green-400 font-mono p-8 overflow-hidden">
-      <div className="max-w-4xl mx-auto">
-        {/* Header */}
-        {/* <div className="mb-8">
-          <h1 className="text-2xl font-bold mb-2">Linux Portfolio OS v1.0</h1>
-          <p className="text-green-300">Copyright (C) 2025 Portfolio Systems</p>
-          <div className="border-t border-green-600 mt-4 pt-4">
-            <p className="text-sm">Booting from /dev/portfolio...</p>
-          </div>
-        </div> */}
+    <div className="min-h-screen bg-black text-green-400 font-mono overflow-hidden">
+      <div className="p-4">
 
         {/* Boot Messages */}
-        <div className="space-y-1 mb-8 min-h-[300px]">
+        <div className="space-y-1 min-h-[300px]">
           {displayedMessages.map((message, index) => (
             <div key={index} className="flex items-center">
               <span className="text-green-500 mr-2">[</span>
@@ -56,13 +48,6 @@ const BootScreen = ({ onBootComplete }) => {
             </div>
           )}
         </div>
-
-        {/* Progress Bar */}
-
-        {/* Boot Steps */}
-
-
-        {/* Completion Message */}
       </div>
     </div>
   );
