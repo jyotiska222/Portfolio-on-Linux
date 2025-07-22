@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&family=Ubuntu+Mono:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Ubuntu', system-ui, sans-serif;
+    background-color: #000;
+  }
+
+  #root {
+    height: 100vh;
+    width: 100vw;
+  }
+}
+
+@layer components {
+  .window {
+    @apply bg-gray-100 border border-gray-300 rounded-t-lg shadow-lg;
+  }
+
+  .window-header {
+    @apply bg-gradient-to-r from-blue-500 to-blue-600 text-white px-3 py-2 rounded-t-lg flex justify-between items-center;
+  }
+
+  .desktop-icon {
+    @apply flex flex-col items-center p-2 rounded hover:bg-white hover:bg-opacity-20 cursor-pointer transition-colors;
+  }
+
+  .taskbar {
+    @apply bg-gray-800 border-t border-gray-600 flex items-center px-2 py-1;
+  }
+
+  /* Custom Scrollbar Styling */
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(156, 163, 175, 0.6) rgba(31, 41, 55, 0.3);
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: rgba(31, 41, 55, 0.3);
+    border-radius: 4px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(156, 163, 175, 0.6);
+    border-radius: 4px;
+    border: 1px solid rgba(31, 41, 55, 0.5);
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(156, 163, 175, 0.8);
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-corner {
+    background: rgba(31, 41, 55, 0.3);
+  }
+}
