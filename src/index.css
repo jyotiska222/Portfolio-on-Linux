@@ -44,8 +44,16 @@
 
   /* Custom Scrollbar Styling */
   .custom-scrollbar {
+    /* Firefox fallback */
     scrollbar-width: thin;
     scrollbar-color: rgba(156, 163, 175, 0.6) rgba(31, 41, 55, 0.3);
+  }
+
+  /* Fallback for browsers that don't support scrollbar-width/scrollbar-color */
+  @supports not (scrollbar-width: thin) {
+    .custom-scrollbar {
+      overflow: auto;
+    }
   }
 
   .custom-scrollbar::-webkit-scrollbar {
