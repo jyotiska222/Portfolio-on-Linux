@@ -16,11 +16,18 @@ const Desktop = () => {
     if (icon.type === 'link') {
       window.open(icon.url, '_blank');
     } else if (icon.component) {
+      let windowSize = { width: 800, height: 600 };
+      if (icon.id === 'projects') {
+        windowSize = { width: 900, height: 700 };
+      } else if (icon.id === 'terminal') {
+        windowSize = { width: 900, height: 650 };
+      }
+      
       openWindow({
         id: icon.id,
         title: icon.name,
         component: icon.component,
-        size: icon.id === 'projects' ? { width: 900, height: 700 } : { width: 800, height: 600 }
+        size: windowSize
       });
     }
     setSelectedIcon(null);

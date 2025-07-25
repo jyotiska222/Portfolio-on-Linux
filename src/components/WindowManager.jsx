@@ -4,6 +4,7 @@ import Window from './Window';
 import AboutMeApp from './apps/AboutMeApp';
 import ProjectsFolder from './apps/ProjectsFolder';
 import ContactApp from './apps/ContactApp';
+import Terminal from './Terminal';
 
 const WindowManager = () => {
   const { windows } = useWindowManager();
@@ -12,7 +13,8 @@ const WindowManager = () => {
     const components = {
       AboutMeApp,
       ProjectsFolder,
-      ContactApp
+      ContactApp,
+      Terminal
     };
     return components[componentName] || (() => <div>App not found</div>);
   };

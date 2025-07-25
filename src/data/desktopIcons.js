@@ -1,4 +1,4 @@
-import { FaUser, FaFolder, FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { FaUser, FaFolder, FaGithub, FaLinkedin, FaEnvelope, FaTerminal } from 'react-icons/fa';
 
 export const desktopIcons = [
   {
@@ -40,5 +40,13 @@ export const desktopIcons = [
     position: { x: 50, y: 450 },
     type: 'application',
     component: 'ContactApp'
+  },
+  {
+    id: 'terminal',
+    name: 'Terminal',
+    icon: FaTerminal,
+    position: { x: 50, y: 550 },
+    type: 'application',
+    component: 'Terminal'
   }
 ];
