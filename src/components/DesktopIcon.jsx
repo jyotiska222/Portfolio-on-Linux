@@ -5,9 +5,8 @@ const DesktopIcon = ({ icon, isSelected, onClick, onDoubleClick }) => {
 
   return (
     <div
-      className={`desktop-icon absolute select-none ${
-        isSelected ? 'bg-blue-500 bg-opacity-30 border border-blue-400' : ''
-      }`}
+      className={`desktop-icon absolute select-none ${isSelected ? 'bg-blue-500 bg-opacity-30 border border-blue-400' : ''
+        }`}
       style={{
         left: icon.position.x,
         top: icon.position.y,

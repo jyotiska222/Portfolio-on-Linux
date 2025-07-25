@@ -16,8 +16,17 @@ const LinuxPortfolio = () => {
     document.body.style.height = '100%'
     document.documentElement.style.scrollBehavior = 'auto'
     
+    // Disable right-click context menu
+    const handleContextMenu = (e) => {
+      e.preventDefault();
+      return false;
+    };
+    
+    document.addEventListener('contextmenu', handleContextMenu);
+    
     // Cleanup function
     return () => {
+      document.removeEventListener('contextmenu', handleContextMenu);
       // Don't reset here as it might interfere with portfolio switching
     }
   }, [])
